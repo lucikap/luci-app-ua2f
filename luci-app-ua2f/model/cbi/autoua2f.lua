@@ -29,9 +29,8 @@ o5.rmempty = false
 o6 = e:option(Value, "Custom_UA", translate("自定义用户代理"), translate("自定义用户代理字符串，长度不足则填充空格，过长则截取与原来长度相同的子串"))
 o6.default = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/555.66"
 
-local apply = luci.http.formvalue("cbi.apply")
-if apply then
-	io.popen("/etc/init.d/autoua2f start")
+m.on_commit = function(self)
+    luci.sys.call("/etc/init.d/autoua2f start")
 end
 
 return m
