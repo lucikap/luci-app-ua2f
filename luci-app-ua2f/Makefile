@@ -12,7 +12,7 @@ define Package/luci-app-ua2f
 	SECTION:=luci
 	CATEGORY:=LuCI
 	SUBMENU:=3. Applications
-	DEPENDS:+=ua2f
+	DEPENDS:=+ua2f
 	TITLE:=file transfer tool
 	PKGARCH:=all
 endef
